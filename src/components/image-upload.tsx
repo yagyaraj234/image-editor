@@ -1,7 +1,6 @@
 import React, { useCallback } from 'react';
 import { useEditorStore } from '../hook/use-editor-store';
 import { Upload } from 'lucide-react';
-import useImage from 'use-image';
 
 export const ImageUpload = () => {
   const { addElement } = useEditorStore();

@@ -43,8 +43,9 @@ interface Props {
 }
 
 export default function Sidebar({ isExpanded, onToolSelect, toggleSidebar }: Props) {
-    const { selectedTool = "images", setSelectedTool } = useEditorStore();
+const { selectedTool = "images", setSelectedTool } = useEditorStore();
     const [expandedTool, setExpandedTool] = useState<string | null>(null);
+    console.log(selectedTool)
 
     const handleToolClick = (id: string) => {
         setSelectedTool(id as any);
@@ -66,14 +67,14 @@ export default function Sidebar({ isExpanded, onToolSelect, toggleSidebar }: Pro
         switch (expandedTool) {
             case 'images':
                 return <ImageUpload />;
-            // case 'shapes':
-            //     return <ShapeLibrary />;
+            case 'shapesrf':
+                return <ShapeLibrary />;
             case 'text':
                 return <TextEditor />;
-            // case 'draw':
-            //     return <DrawingTools />
-            // case 'eraser':
-            //     return <DrawingTools />;
+            case 'drawfgr':
+                return <DrawingTools />
+            case 'eraserer':
+                return <DrawingTools />;
             default:
                 return null;
         }

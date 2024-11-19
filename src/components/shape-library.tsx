@@ -1,4 +1,3 @@
-import React from 'react';
 import { useEditorStore } from '../hook/use-editor-store';
 import { ShapeType } from '../types/editor';
 import {

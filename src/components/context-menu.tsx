@@ -1,6 +1,5 @@
-import React from 'react';
 import { useEditorStore } from '../hook/use-editor-store';
-import { Trash2, Copy, ArrowUpCircle, ArrowDownCircle } from 'lucide-react';
+import { Trash2, ArrowUpCircle, ArrowDownCircle } from 'lucide-react';
 
 interface ContextMenuProps {
     x: number;
@@ -19,21 +18,21 @@ export const ContextMenu = ({ x, y, onClose }: ContextMenuProps) => {
         }
     };
 
-    const handleDuplicate = () => {
-        if (selectedElement) {
-            const element = elements.find((el: any) => el.id === selectedElement);
-            if (element) {
-                const newElement = {
-                    ...element,
-                    id: crypto.randomUUID(),
-                    x: element.x + 20,
-                    y: element.y + 20,
-                };
-                updateElement(newElement.id, newElement);
-            }
-            onClose();
-        }
-    };
+    // const handleDuplicate = () => {
+    //     if (selectedElement) {
+    //         const element = elements.find((el: any) => el.id === selectedElement);
+    //         if (element) {
+    //             const newElement = {
+    //                 ...element,
+    //                 id: crypto.randomUUID(),
+    //                 x: element.x + 20,
+    //                 y: element.y + 20,
+    //             };
+    //             updateElement(newElement.id, newElement);
+    //         }
+    //         onClose();
+    //     }
+    // };
 
     const handleLayer = (direction: 'up' | 'down') => {
         if (selectedElement) {
